@@ -1,17 +1,22 @@
 package com.insurance.bean;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="zip_table")
+@Table(name="us_zip")
 public class ZipBean 
 {
 	@Id
+	@Column(name="zip")
 	private int zipCode;
+	@Column(name="prim_city")
 	private String cityName;
+	@Column(name="state")
 	private String stateName;
+	@Column(name="country")
 	private String countryName;
 	public int getZipCode() {
 		return zipCode;

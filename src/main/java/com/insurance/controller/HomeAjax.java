@@ -32,9 +32,10 @@ public class HomeAjax {
 	public @ResponseBody
 	void getTags(@RequestParam("term") String zipCode,HttpServletRequest request,HttpServletResponse response) throws IOException {
 		log.info("getTags() started");
+		log.info("getTags() Request "+zipCode);
 		List<String> listString=dataService.getZipList(zipCode);
 			String result = new Gson().toJson(listString);
-			
+			log.info("getTags() Response "+listString);
 			 response.getWriter().write(result);
 			 
 		}
